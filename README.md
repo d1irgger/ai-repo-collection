@@ -1,6 +1,7 @@
 # ComfyUI Model Notes
 
 个人模型链接索引与 ComfyUI 放置位置备忘。
+非常好 完美适配4GB-12GB显存设备
 
 ## 导航
 - [模型总表](#模型总表)
