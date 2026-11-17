@@ -1,6 +1,7 @@
 # ComfyUI Model Notes
 
-> 个人 AI 模型链接索引与 ComfyUI 放置位置备忘 · 适配 4GB–12GB 显存设备
+> 个人 AI 模型链接索引与 ComfyUI 放置位置备忘
+> 适配 **NVIDIA GeForce RTX 3050 4GB Laptop GPU** 与 **NVIDIA GeForce RTX 5070 12GB**
 
 <h3 align="center">
   <a href="https://d1irgger.github.io/ai-repo-collection/">🌐 打开在线展示页面 →</a>
@@ -21,6 +22,9 @@
 ## 说明
 
 - **在线展示**：https://d1irgger.github.io/ai-repo-collection/
+- **适配设备**：
+  - 4GB 显存：NVIDIA GeForce RTX 3050 4GB Laptop GPU
+  - 12GB 显存：NVIDIA GeForce RTX 5070
 - 本 README 保留全部原始文本，按板块折叠，方便检索与复制。
 - 本仓库只记录模型来源链接与放置位置，**不包含模型权重文件**。
 
