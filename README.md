@@ -1,46 +1,64 @@
 # ComfyUI Model Notes
 
-> 个人 AI 模型链接索引与 ComfyUI 放置位置备忘
-> 适配 4GB–12GB 显存设备
+> 个人 AI 模型链接索引与 ComfyUI 放置位置备忘 · 适配 4GB–12GB 显存设备
+
+<h3 align="center">
+  <a href="https://d1irgger.github.io/ai-repo-collection/">🌐 打开在线展示页面 →</a>
+</h3>
 
 <p align="center">
-  <a href="#效果图">效果图</a> ·
-  <a href="#模型总表">模型总表</a> ·
-  <a href="#checkpoints">Checkpoints</a> ·
-  <a href="#comfyui-路径映射">路径映射</a>
+  <a href="https://d1irgger.github.io/ai-repo-collection/">
+    <img src="https://img.shields.io/badge/GitHub_Pages-Online_Showcase-0071e3?style=for-the-badge&logo=githubpages&logoColor=white" alt="Online Showcase">
+  </a>
+</p>
+
+<p align="center">
+  <sub>网页为主展示入口；下方文本已折叠，展开后可自由选中复制。</sub>
 </p>
 
 ---
 
-## 效果图
+## 说明
 
-<table align="center">
-  <tr>
-    <td align="center" width="50%">
-      <img src="assets/lustify/result-01.png" width="360" alt="LUSTIFY 效果图"><br>
-      <sub><b>LUSTIFY! [NSFW checkpoint]</b><br>配 Krea-2 工作流</sub>
-    </td>
-    <td align="center" width="50%">
-      <img src="assets/moss/result-02.png" width="360" alt="MOSS 效果图"><br>
-      <sub><b>Moss Image - Better Nudes</b><br>配 MOSS-Image</sub>
-    </td>
-  </tr>
-</table>
+- **在线展示**：https://d1irgger.github.io/ai-repo-collection/
+- 本 README 保留全部原始文本，按板块折叠，方便检索与复制。
+- 本仓库只记录模型来源链接与放置位置，**不包含模型权重文件**。
 
 ---
 
-## 模型总表
+<details>
+<summary><b>📸 效果图</b>（2 张，点击展开）</summary>
+
+<br>
+
+<p align="center">
+  <img src="assets/lustify/result-01.png" width="320" alt="LUSTIFY 效果图"><br>
+  <sub><b>LUSTIFY! [NSFW checkpoint]</b> · 配 Krea-2 工作流</sub>
+</p>
+
+<p align="center">
+  <img src="assets/moss/result-02.png" width="320" alt="MOSS 效果图"><br>
+  <sub><b>Moss Image - Better Nudes</b> · 配 MOSS-Image</sub>
+</p>
+
+</details>
+
+<details>
+<summary><b>📋 模型总表</b>（点击展开）</summary>
+
+<br>
 
 | 模型名 | 类型 | 放置路径 | 链接 | 备注 |
 |---|---|---|---|---|
 | LUSTIFY! [NSFW checkpoint] | Checkpoint | `models/checkpoints/` | https://civitai.red/models/573152/lustify-nsfw-checkpoint | 配 Krea-2 工作流，含 text encoder / VAE |
 | Moss Image - Better Nudes | Checkpoint | `models/checkpoints/` | https://civitai.red/models/3008073/moss-image-better-nudes | 配 MOSS-Image，含 diffusion model / text encoder / VAE |
 
----
+</details>
 
-## Checkpoints
+<details>
+<summary><b>🧩 LUSTIFY! [NSFW checkpoint]</b>（点击展开）</summary>
 
-### LUSTIFY! [NSFW checkpoint]
+<br>
 
 - **主模型**：https://civitai.red/models/573152/lustify-nsfw-checkpoint
 - **放置路径**：`ComfyUI/models/checkpoints/`
@@ -59,7 +77,9 @@
 > NSFW checkpoint；工作流为 Krea-2 / SDXL 相关，`diffusion_models` 下的文件按实际下载名放置。
 
 <details>
-<summary><b>工作流参考图（2 张）</b></summary>
+<summary>工作流参考图（2 张）</summary>
+
+<br>
 
 <p>
   <img src="assets/lustify/workflow-01.png" width="49%" alt="LUSTIFY 工作流 1">
@@ -68,7 +88,12 @@
 
 </details>
 
-### Moss Image - Better Nudes
+</details>
+
+<details>
+<summary><b>🧩 Moss Image - Better Nudes</b>（点击展开）</summary>
+
+<br>
 
 - **主模型**：https://civitai.red/models/3008073/moss-image-better-nudes
 - **放置路径**：`ComfyUI/models/checkpoints/`
@@ -85,7 +110,9 @@
 > NSFW；MOSS-Image 仓库内文件已按类型标注，直接对照上表放置即可。
 
 <details>
-<summary><b>工作流参考图（2 张）</b></summary>
+<summary>工作流参考图（2 张）</summary>
+
+<br>
 
 <p>
   <img src="assets/moss/workflow-03.png" width="49%" alt="MOSS 工作流 1">
@@ -94,9 +121,12 @@
 
 </details>
 
----
+</details>
 
-## ComfyUI 路径映射
+<details>
+<summary><b>🗂️ ComfyUI 路径映射</b>（点击展开）</summary>
+
+<br>
 
 | 模型类型 | 放置路径 | 说明 |
 |---|---|---|
@@ -110,3 +140,11 @@
 | CLIP Vision | `ComfyUI/models/clip_vision/` | IP-Adapter 等用 |
 | Upscale | `ComfyUI/models/upscale_models/` | 放大模型 |
 | 工作流 | `ComfyUI/user/default/workflows/` | 也可直接存 JSON 备注 |
+
+</details>
+
+---
+
+<p align="center">
+  <sub>ComfyUI Model Notes · 个人参考记录 · 不含模型权重文件</sub>
+</p>
