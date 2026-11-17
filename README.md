@@ -39,7 +39,7 @@
 
 #### 工作流参考图
 
-![LUSTIFY 工作流 1](assets/lustify/Krea2_turbo 1.png)
+![LUSTIFY 工作流 1](assets/lustify/Krea2_turbo 1.jpg)
 ![LUSTIFY 工作流 2](assets/lustify/Krea2_turbo 2.png)
 
 #### 效果图
