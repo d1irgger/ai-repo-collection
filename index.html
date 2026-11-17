@@ -15,10 +15,17 @@
     --radius-lg: 28px;
     --radius-md: 20px;
     --radius-sm: 14px;
+
+    /* 统一间距体系 */
+    --page-pad-x: 24px;
+    --head-gap: 28px;
+    --grid-gap: 18px;
+    --card-pad: 22px 20px 18px;
+    --table-pad-x: 12px;
+    --table-pad-y: 11px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { -webkit-text-size-adjust: 100%; }
 
   body {
@@ -111,7 +118,6 @@
     100% { transform: translate(-6vw, 8vh) scale(1.15); }
   }
 
-  /* 细颗粒噪点，提升质感 */
   .noise {
     position: fixed;
     inset: 0;
@@ -184,29 +190,19 @@
     z-index: 2;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 120px 24px 80px;
+    padding: 100px var(--page-pad-x) 80px;
     min-height: 100vh;
   }
 
-  .page {
-    display: none;
-  }
+  .page { display: none; }
   .page.active {
     display: block;
     animation: pageIn .6s cubic-bezier(.2,.8,.2,1) both;
   }
 
   @keyframes pageIn {
-    from {
-      opacity: 0;
-      transform: translateY(24px) scale(0.985);
-      filter: blur(6px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      filter: blur(0);
-    }
+    from { opacity: 0; transform: translateY(24px) scale(0.985); filter: blur(6px); }
+    to   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
   }
 
   /* ============ 液态玻璃卡片 ============ */
@@ -226,35 +222,25 @@
     transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s;
   }
 
-  /* 顶部高光线 */
   .glass::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 10%;
-    right: 10%;
-    height: 1px;
+    top: 0; left: 10%; right: 10%; height: 1px;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
-    pointer-events: none;
-    z-index: 2;
+    pointer-events: none; z-index: 2;
   }
 
-  /* 斜向光泽扫过 */
   .glass::after {
     content: '';
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     border-radius: inherit;
     background: linear-gradient(105deg, transparent 42%, rgba(255,255,255,0.07) 47%, transparent 52%);
     background-size: 250% 100%;
     background-position: 200% 0;
     transition: background-position .9s cubic-bezier(.2,.8,.2,1);
-    pointer-events: none;
-    z-index: 1;
+    pointer-events: none; z-index: 1;
   }
-  .glass:hover::after {
-    background-position: -100% 0;
-  }
+  .glass:hover::after { background-position: -100% 0; }
 
   .glass:hover {
     box-shadow:
@@ -264,31 +250,22 @@
       inset 0 -1px 0 rgba(255,255,255,0.05);
   }
 
-  .glass-content {
-    position: relative;
-    z-index: 3;
-  }
+  .glass-content { position: relative; z-index: 3; }
 
   /* ============ 首页 Hero ============ */
-  .hero {
-    text-align: center;
-    padding: 80px 0 40px;
-  }
+  .hero { text-align: center; padding: 72px 0 var(--head-gap); }
 
   .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    display: inline-flex; align-items: center; gap: 8px;
     padding: 7px 16px;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 13px; font-weight: 500;
     color: var(--text-2);
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 100px;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
   .hero-badge .dot {
     width: 6px; height: 6px; border-radius: 50%;
@@ -302,11 +279,11 @@
   }
 
   .hero h1 {
-    font-size: clamp(42px, 8vw, 76px);
+    font-size: clamp(38px, 7vw, 68px);
     font-weight: 700;
     letter-spacing: -0.035em;
     line-height: 1.05;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     background: linear-gradient(180deg, #fff 30%, rgba(255,255,255,0.55) 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -314,34 +291,30 @@
   }
 
   .hero p {
-    font-size: clamp(16px, 2.2vw, 19px);
+    font-size: clamp(15px, 2vw, 18px);
     color: var(--text-2);
-    max-width: 560px;
-    margin: 0 auto 12px;
+    max-width: 580px;
+    margin: 0 auto 10px;
     line-height: 1.55;
   }
 
   .hero .sub {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-3);
-    margin-top: 8px;
+    margin-top: 6px;
   }
 
   .cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 40px;
-    padding: 15px 32px;
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 36px;
+    padding: 14px 30px;
     border-radius: 100px;
     background: linear-gradient(145deg, rgba(255,255,255,0.20), rgba(255,255,255,0.08));
     -webkit-backdrop-filter: blur(30px) saturate(200%);
     backdrop-filter: blur(30px) saturate(200%);
     border: 1px solid rgba(255,255,255,0.22);
     color: #fff;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    font-size: 15px; font-weight: 600; letter-spacing: -0.01em;
     cursor: pointer;
     transition: all .35s cubic-bezier(.2,.8,.2,1);
     font-family: inherit;
@@ -359,104 +332,72 @@
   }
   .cta:active { transform: translateY(0) scale(0.99); }
 
-  /* ============ 通用标题 ============ */
+  /* ============ 通用标题：所有页面统一间距 ============ */
   .page-head {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: var(--head-gap);
   }
   .page-head h2 {
-    font-size: clamp(28px, 5vw, 40px);
+    font-size: clamp(26px, 4.5vw, 36px);
     font-weight: 700;
     letter-spacing: -0.025em;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     background: linear-gradient(180deg, #fff 40%, rgba(255,255,255,0.6) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  .page-head p {
-    font-size: 15px;
-    color: var(--text-2);
-  }
-
-  /* 效果图页顶部收紧 */
-  #showcase .page-head {
-    margin-bottom: 24px;
-  }
+  .page-head p { font-size: 14px; color: var(--text-2); }
 
   /* ============ 效果图卡片 ============ */
   .showcase {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 880px;
+    gap: var(--grid-gap);
+    max-width: 920px;
     margin: 0 auto;
   }
 
-  .show-card {
-    cursor: default;
-  }
+  .show-card { cursor: default; }
   .show-card .glass { transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s; }
-  .show-card:hover .glass {
-    transform: translateY(-6px);
-  }
+  .show-card:hover .glass { transform: translateY(-5px); }
 
   .show-card img {
     width: 100%;
     display: block;
-    height: clamp(280px, 52vh, 540px);
+    height: clamp(200px, 38vh, 360px);
     object-fit: contain;
     background: rgba(0,0,0,0.18);
   }
 
-  .show-meta {
-    padding: 16px 20px 18px;
-  }
+  .show-meta { padding: 12px 18px 14px; }
   .show-meta .name {
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    margin-bottom: 3px;
+    font-size: 14px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 2px;
   }
-  .show-meta .desc {
-    font-size: 13px;
-    color: var(--text-2);
-  }
+  .show-meta .desc { font-size: 12px; color: var(--text-2); }
   .show-meta .tag {
-    display: inline-block;
-    margin-top: 10px;
+    display: inline-block; margin-top: 8px;
     padding: 3px 10px;
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 10px; font-weight: 500;
     color: #ff8fab;
     background: rgba(255,45,85,0.12);
     border: 1px solid rgba(255,45,85,0.2);
     border-radius: 100px;
   }
 
-  /* ============ 表格 ============ */
-  .table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13.5px;
-  }
+  /* ============ 通用表格 ============ */
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
   th, td {
     text-align: left;
-    padding: 13px 16px;
+    padding: var(--table-pad-y) var(--table-pad-x);
     border-bottom: 0.5px solid var(--line);
     vertical-align: top;
   }
   th {
-    font-weight: 600;
-    color: var(--text-2);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: .06em;
-    white-space: nowrap;
+    font-weight: 600; color: var(--text-2);
+    font-size: 10.5px; text-transform: uppercase;
+    letter-spacing: .05em; white-space: nowrap;
   }
   tbody tr:last-child td { border-bottom: none; }
   tbody tr:hover { background: rgba(255,255,255,0.03); }
@@ -464,84 +405,107 @@
 
   code {
     font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
-    font-size: 12px;
+    font-size: 11.5px;
     background: rgba(255,255,255,0.08);
     border: 0.5px solid rgba(255,255,255,0.06);
-    padding: 2px 7px;
-    border-radius: 7px;
+    padding: 2px 6px;
+    border-radius: 6px;
     white-space: nowrap;
     color: #d1d1d6;
   }
 
-  /* ============ 详情卡片 ============ */
+  /* ============ 总表 / 路径映射：给玻璃卡片补统一内边距 ============ */
+  #models .glass-content,
+  #paths .glass-content {
+    padding: 10px 8px 12px;
+  }
+
+  /* ============ 详情卡片：横向双列 ============ */
+  .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--grid-gap);
+    align-items: start;
+  }
+
   .detail-card {
-    padding: 28px 28px 24px;
-    margin-bottom: 20px;
+    padding: var(--card-pad);
+    margin-bottom: 0;
   }
 
   .detail-card h3 {
-    font-size: 21px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 20px;
-    color: #fff;
+    font-size: 17px; font-weight: 700; letter-spacing: -0.02em;
+    margin-bottom: 14px; color: #fff;
+    line-height: 1.3;
   }
 
-  .meta {
-    list-style: none;
-    display: grid;
-    gap: 10px;
-    margin-bottom: 24px;
-  }
+  .meta { list-style: none; display: grid; gap: 7px; margin-bottom: 18px; }
   .meta li {
-    display: flex;
-    gap: 12px;
-    font-size: 14px;
-    color: var(--text-2);
-    align-items: baseline;
+    display: flex; gap: 8px;
+    font-size: 13px; color: var(--text-2);
+    align-items: baseline; flex-wrap: wrap;
   }
   .meta li strong {
-    color: var(--text);
-    font-weight: 600;
-    min-width: 84px;
-    flex-shrink: 0;
-    font-size: 13px;
+    color: var(--text); font-weight: 600;
+    min-width: 72px; flex-shrink: 0; font-size: 12px;
   }
   .meta li a { word-break: break-all; }
 
   .sub-title {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-    color: var(--text-3);
-    margin: 24px 0 12px;
+    font-size: 10.5px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: .07em; color: var(--text-3); margin: 18px 0 8px;
+  }
+
+  /* ============ 详情卡片内表格：绝不出现横向滚动条 ============ */
+  .detail-card .table-wrap {
+    overflow: visible;
+  }
+
+  .detail-card table {
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .detail-card th:nth-child(1),
+  .detail-card td:nth-child(1) { width: 44%; }
+
+  .detail-card th:nth-child(2),
+  .detail-card td:nth-child(2) { width: 30%; }
+
+  .detail-card th:nth-child(3),
+  .detail-card td:nth-child(3) { width: 26%; }
+
+  .detail-card th,
+  .detail-card td {
+    padding: 8px 7px;
+    word-break: break-word;
+  }
+
+  .detail-card td code {
+    white-space: normal;
+    word-break: break-all;
+    display: inline;
+    padding: 1px 5px;
+    font-size: 10.5px;
+    line-height: 1.5;
   }
 
   /* ============ 折叠工作流 ============ */
   details {
-    margin-top: 20px;
+    margin-top: 14px;
     border-top: 0.5px solid var(--line);
-    padding-top: 16px;
+    padding-top: 12px;
   }
   summary {
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
+    cursor: pointer; font-size: 13px; font-weight: 600;
     color: var(--accent);
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    list-style: none; display: flex; align-items: center; gap: 6px;
     padding: 4px 0;
-    user-select: none;
-    -webkit-user-select: none;
+    user-select: none; -webkit-user-select: none;
   }
   summary::-webkit-details-marker { display: none; }
   summary::before {
-    content: "›";
-    font-size: 20px;
-    line-height: 1;
+    content: "›"; font-size: 19px; line-height: 1;
     display: inline-block;
     transition: transform .3s cubic-bezier(.2,.8,.2,1);
   }
@@ -550,8 +514,7 @@
   .workflow-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-top: 16px;
+    gap: 10px; margin-top: 12px;
     animation: pageIn .4s ease both;
   }
   .workflow-grid img {
@@ -563,24 +526,43 @@
   }
 
   /* ============ 响应式 ============ */
-  @media (max-width: 680px) {
-    main { padding: 104px 16px 60px; }
-    .nav { top: 14px; padding: 5px; }
-    .nav button { padding: 9px 15px; font-size: 12px; }
-    .showcase { grid-template-columns: 1fr; }
-    .show-card img { height: clamp(260px, 46vh, 420px); }
-    .workflow-grid { grid-template-columns: 1fr; }
-    .detail-card { padding: 22px 20px 20px; }
+  @media (max-width: 900px) {
+    .detail-grid { grid-template-columns: 1fr; }
+    .detail-card { padding: 24px 22px 20px; margin-bottom: var(--grid-gap); }
+    .detail-card h3 { font-size: 19px; }
     .meta li { flex-direction: column; gap: 2px; }
     .meta li strong { min-width: 0; }
-    th, td { padding: 10px 12px; }
-    .hero { padding: 40px 0 20px; }
+    table { font-size: 13.5px; }
+    th, td { padding: 12px 14px; }
+    code { font-size: 12px; }
+    .detail-card th,
+    .detail-card td { padding: 10px 10px; }
+    .detail-card td code { font-size: 11.5px; }
+  }
+
+  @media (max-width: 680px) {
+    main { padding: 88px 16px 60px; }
+    .page-head { margin-bottom: 20px; }
+    .nav { top: 14px; padding: 5px; }
+    .nav button { padding: 9px 15px; font-size: 12px; }
+    .showcase { grid-template-columns: 1fr; max-width: 360px; }
+    .show-card img { height: clamp(220px, 42vh, 340px); }
+    .workflow-grid { grid-template-columns: 1fr; }
+    .detail-card { padding: 20px 18px 18px; }
+    th, td { padding: 9px 11px; }
+    .hero { padding: 36px 0 20px; }
+  }
+
+  @media (max-height: 720px) {
+    .show-card img { height: clamp(160px, 32vh, 280px); }
+    main { padding-top: 84px; }
+    .page-head { margin-bottom: 16px; }
+    .show-meta { padding: 10px 16px 12px; }
   }
 </style>
 </head>
 <body>
 
-<!-- 动态彩虹背景 -->
 <div class="bg">
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
@@ -590,7 +572,6 @@
 </div>
 <div class="noise"></div>
 
-<!-- 顶部导航 -->
 <nav class="nav">
   <button data-page="home" class="active">首页</button>
   <button data-page="showcase">效果图</button>
@@ -610,7 +591,7 @@
       </div>
       <h1>模型链接索引<br>与放置备忘</h1>
       <p>个人 AI 模型来源、配套文件与 ComfyUI 路径映射，附带工作流参考与效果展示。</p>
-      <p class="sub">适配 4GB – 12GB 显存设备 · 纯链接记录，不含权重</p>
+      <p class="sub">适配 NVIDIA GeForce RTX 3050 4GB Laptop GPU 与 GeForce RTX 5070 12GB · 纯链接记录，不含权重</p>
       <button class="cta" data-page="showcase">
         查看效果图
         <span>→</span>
@@ -685,77 +666,81 @@
     </div>
   </section>
 
-  <!-- 详情 -->
+  <!-- 详情：横向双列 -->
   <section id="checkpoints" class="page">
     <div class="page-head">
       <h2>Checkpoints</h2>
       <p>来源、配套文件与工作流参考图</p>
     </div>
 
-    <!-- LUSTIFY -->
-    <div class="glass detail-card">
-      <div class="glass-content">
-        <h3>LUSTIFY! [NSFW checkpoint]</h3>
-        <ul class="meta">
-          <li><strong>主模型</strong><a href="https://civitai.red/models/573152/lustify-nsfw-checkpoint" target="_blank" rel="noopener">civitai.red/models/573152 ↗</a></li>
-          <li><strong>放置路径</strong><code>ComfyUI/models/checkpoints/</code></li>
-          <li><strong>对应工作流</strong><a href="https://civitai.red/models/2503119/lustify-workflows-krea-2-sdxl?modelVersionId=3123550" target="_blank" rel="noopener">LUSTIFY Workflows Krea-2 / SDXL ↗</a></li>
-          <li><strong>版本备注</strong>自制 11（含义待确认）</li>
-          <li><strong>配套来源</strong><a href="https://huggingface.co/Comfy-Org/Krea-2/tree/main" target="_blank" rel="noopener">HuggingFace · Comfy-Org/Krea-2 ↗</a></li>
-        </ul>
+    <div class="detail-grid">
 
-        <div class="sub-title">配套文件</div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>文件</th><th>来源目录</th><th>放置路径</th></tr></thead>
-            <tbody>
-              <tr><td><code>qwen3vl_4b_fp8_scaled.safetensors</code></td><td><code>Krea-2/text_encoders</code></td><td><code>models/text_encoders/</code></td></tr>
-              <tr><td><code>qwen_image_vae.safetensors</code></td><td><code>Krea-2/vae</code></td><td><code>models/vae/</code></td></tr>
-              <tr><td>按实际下载文件名</td><td><code>Krea-2/diffusion_models</code></td><td><code>models/diffusion_models/</code></td></tr>
-            </tbody>
-          </table>
-        </div>
+      <!-- LUSTIFY -->
+      <div class="glass detail-card">
+        <div class="glass-content">
+          <h3>LUSTIFY! [NSFW checkpoint]</h3>
+          <ul class="meta">
+            <li><strong>主模型</strong><a href="https://civitai.red/models/573152/lustify-nsfw-checkpoint" target="_blank" rel="noopener">civitai.red/models/573152 ↗</a></li>
+            <li><strong>放置路径</strong><code>ComfyUI/models/checkpoints/</code></li>
+            <li><strong>对应工作流</strong><a href="https://civitai.red/models/2503119/lustify-workflows-krea-2-sdxl?modelVersionId=3123550" target="_blank" rel="noopener">LUSTIFY Workflows Krea-2 / SDXL ↗</a></li>
+            <li><strong>版本备注</strong>自制 11（含义待确认）</li>
+            <li><strong>配套来源</strong><a href="https://huggingface.co/Comfy-Org/Krea-2/tree/main" target="_blank" rel="noopener">HuggingFace · Comfy-Org/Krea-2 ↗</a></li>
+          </ul>
 
-        <details>
-          <summary>工作流参考图（2 张）</summary>
-          <div class="workflow-grid">
-            <img src="assets/lustify/workflow-01.png" alt="LUSTIFY 工作流 1" loading="lazy">
-            <img src="assets/lustify/workflow-02.png" alt="LUSTIFY 工作流 2" loading="lazy">
+          <div class="sub-title">配套文件</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>文件</th><th>来源目录</th><th>放置路径</th></tr></thead>
+              <tbody>
+                <tr><td><code>qwen3vl_4b_fp8_scaled.safetensors</code></td><td><code>Krea-2/text_encoders</code></td><td><code>models/text_encoders/</code></td></tr>
+                <tr><td><code>qwen_image_vae.safetensors</code></td><td><code>Krea-2/vae</code></td><td><code>models/vae/</code></td></tr>
+                <tr><td>按实际下载文件名</td><td><code>Krea-2/diffusion_models</code></td><td><code>models/diffusion_models/</code></td></tr>
+              </tbody>
+            </table>
           </div>
-        </details>
-      </div>
-    </div>
 
-    <!-- MOSS -->
-    <div class="glass detail-card">
-      <div class="glass-content">
-        <h3>Moss Image - Better Nudes</h3>
-        <ul class="meta">
-          <li><strong>主模型</strong><a href="https://civitai.red/models/3008073/moss-image-better-nudes" target="_blank" rel="noopener">civitai.red/models/3008073 ↗</a></li>
-          <li><strong>放置路径</strong><code>ComfyUI/models/checkpoints/</code></li>
-          <li><strong>配套来源</strong><a href="https://huggingface.co/Comfy-Org/MOSS-Image/tree/main" target="_blank" rel="noopener">HuggingFace · Comfy-Org/MOSS-Image ↗</a></li>
-        </ul>
-
-        <div class="sub-title">配套文件</div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>文件</th><th>来源目录</th><th>放置路径</th></tr></thead>
-            <tbody>
-              <tr><td><code>moss_image_base_bf16.safetensors</code></td><td><code>MOSS-Image/diffusion_models</code></td><td><code>models/diffusion_models/</code></td></tr>
-              <tr><td><code>qwen3.5_9b_bf16.safetensors</code></td><td><code>MOSS-Image/text_encoders</code></td><td><code>models/text_encoders/</code></td></tr>
-              <tr><td><code>flux2-vae.safetensors</code></td><td><code>MOSS-Image/vae</code></td><td><code>models/vae/</code></td></tr>
-            </tbody>
-          </table>
+          <details>
+            <summary>工作流参考图（2 张）</summary>
+            <div class="workflow-grid">
+              <img src="assets/lustify/workflow-01.png" alt="LUSTIFY 工作流 1" loading="lazy">
+              <img src="assets/lustify/workflow-02.png" alt="LUSTIFY 工作流 2" loading="lazy">
+            </div>
+          </details>
         </div>
-
-        <details>
-          <summary>工作流参考图（2 张）</summary>
-          <div class="workflow-grid">
-            <img src="assets/moss/workflow-03.png" alt="MOSS 工作流 1" loading="lazy">
-            <img src="assets/moss/workflow-04.png" alt="MOSS 工作流 2" loading="lazy">
-          </div>
-        </details>
       </div>
+
+      <!-- MOSS -->
+      <div class="glass detail-card">
+        <div class="glass-content">
+          <h3>Moss Image - Better Nudes</h3>
+          <ul class="meta">
+            <li><strong>主模型</strong><a href="https://civitai.red/models/3008073/moss-image-better-nudes" target="_blank" rel="noopener">civitai.red/models/3008073 ↗</a></li>
+            <li><strong>放置路径</strong><code>ComfyUI/models/checkpoints/</code></li>
+            <li><strong>配套来源</strong><a href="https://huggingface.co/Comfy-Org/MOSS-Image/tree/main" target="_blank" rel="noopener">HuggingFace · Comfy-Org/MOSS-Image ↗</a></li>
+          </ul>
+
+          <div class="sub-title">配套文件</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>文件</th><th>来源目录</th><th>放置路径</th></tr></thead>
+              <tbody>
+                <tr><td><code>moss_image_base_bf16.safetensors</code></td><td><code>MOSS-Image/diffusion_models</code></td><td><code>models/diffusion_models/</code></td></tr>
+                <tr><td><code>qwen3.5_9b_bf16.safetensors</code></td><td><code>MOSS-Image/text_encoders</code></td><td><code>models/text_encoders/</code></td></tr>
+                <tr><td><code>flux2-vae.safetensors</code></td><td><code>MOSS-Image/vae</code></td><td><code>models/vae/</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <details>
+            <summary>工作流参考图（2 张）</summary>
+            <div class="workflow-grid">
+              <img src="assets/moss/workflow-03.png" alt="MOSS 工作流 1" loading="lazy">
+              <img src="assets/moss/workflow-04.png" alt="MOSS 工作流 2" loading="lazy">
+            </div>
+          </details>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -797,23 +782,13 @@
 
     function showPage(id) {
       if (!validIds.includes(id)) id = 'home';
-
-      pages.forEach(p => {
-        p.classList.remove('active');
-      });
-
+      pages.forEach(p => p.classList.remove('active'));
       const target = document.getElementById(id);
       if (target) {
-        // 强制 reflow 以重新触发入场动画
         void target.offsetWidth;
         target.classList.add('active');
       }
-
-      navButtons.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.page === id);
-      });
-
-      // 切换页面后回到顶部
+      navButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.page === id));
       window.scrollTo(0, 0);
     }
 
@@ -826,19 +801,13 @@
       }
     }
 
-    navButtons.forEach(btn => {
-      btn.addEventListener('click', () => go(btn.dataset.page));
-    });
-
-    ctaButtons.forEach(btn => {
-      btn.addEventListener('click', () => go(btn.dataset.page));
-    });
+    navButtons.forEach(btn => btn.addEventListener('click', () => go(btn.dataset.page)));
+    ctaButtons.forEach(btn => btn.addEventListener('click', () => go(btn.dataset.page)));
 
     window.addEventListener('hashchange', () => {
       showPage(location.hash.slice(1) || 'home');
     });
 
-    // 支持键盘左右方向键切换
     window.addEventListener('keydown', (e) => {
       if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
       const currentId = document.querySelector('.page.active')?.id || 'home';
@@ -848,7 +817,6 @@
       go(validIds[idx]);
     });
 
-    // 初始化
     showPage(location.hash.slice(1) || 'home');
   })();
 </script>
