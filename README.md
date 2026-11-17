@@ -34,6 +34,18 @@
 
 备注：NSFW checkpoint；工作流为 Krea-2 / SDXL 相关，diffusion_models 下的文件按实际下载名放置。
 
+### LUSTIFY! [NSFW checkpoint]
+（前面的链接、配套文件表保持不变）
+
+<summary>工作流参考图（2 张）</summary>
+
+![LUSTIFY 工作流 1](assets/lustify/workflow-01.png)
+![LUSTIFY 工作流 2](assets/lustify/workflow-02.png)
+
+#### 效果图
+
+![LUSTIFY 效果图 1](assets/lustify/result-01.png)
+
 ### Moss Image - Better Nudes
 - 主模型链接：https://civitai.red/models/3008073/moss-image-better-nudes
 - 主模型放置：`ComfyUI/models/checkpoints/`
@@ -48,6 +60,15 @@
 | flux2-vae.safetensors | `MOSS-Image/vae` | `ComfyUI/models/vae/` |
 
 备注：NSFW；MOSS-Image 仓库内文件已按类型标注，直接对照上表放置即可。
+
+<summary>工作流参考图（2 张）</summary>
+
+![MOSS 工作流 1](assets/moss/workflow-01.png)
+![MOSS 工作流 2](assets/moss/workflow-02.png)
+
+#### 效果图
+
+![MOSS 效果图 1](assets/moss/result-01.png)
 
 
 ## ComfyUI 路径映射
