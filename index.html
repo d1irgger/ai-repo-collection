@@ -379,11 +379,18 @@
     color: var(--text-2);
   }
 
+  /* 效果图页顶部收紧 */
+  #showcase .page-head {
+    margin-bottom: 24px;
+  }
+
   /* ============ 效果图卡片 ============ */
   .showcase {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    max-width: 880px;
+    margin: 0 auto;
   }
 
   .show-card {
@@ -397,13 +404,13 @@
   .show-card img {
     width: 100%;
     display: block;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    background: rgba(255,255,255,0.03);
+    height: clamp(280px, 52vh, 540px);
+    object-fit: contain;
+    background: rgba(0,0,0,0.18);
   }
 
   .show-meta {
-    padding: 18px 20px 20px;
+    padding: 16px 20px 18px;
   }
   .show-meta .name {
     font-size: 15px;
@@ -561,6 +568,7 @@
     .nav { top: 14px; padding: 5px; }
     .nav button { padding: 9px 15px; font-size: 12px; }
     .showcase { grid-template-columns: 1fr; }
+    .show-card img { height: clamp(260px, 46vh, 420px); }
     .workflow-grid { grid-template-columns: 1fr; }
     .detail-card { padding: 22px 20px 20px; }
     .meta li { flex-direction: column; gap: 2px; }
