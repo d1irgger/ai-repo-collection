@@ -37,14 +37,14 @@
 ### LUSTIFY! [NSFW checkpoint]
 （前面的链接、配套文件表保持不变）
 
-<summary>工作流参考图（2 张）</summary>
+#### 工作流参考图
 
-![LUSTIFY 工作流 1](assets/lustify/workflow-01.png)
-![LUSTIFY 工作流 2](assets/lustify/workflow-02.png)
+![LUSTIFY 工作流 1](assets/lustify/Krea2_turbo 1.png)
+![LUSTIFY 工作流 2](assets/lustify/Krea2_turbo 2.png)
 
 #### 效果图
 
-![LUSTIFY 效果图 1](assets/lustify/result-01.png)
+![LUSTIFY 效果图 1](assets/lustify/Krea2_turbo s.png)
 
 ### Moss Image - Better Nudes
 - 主模型链接：https://civitai.red/models/3008073/moss-image-better-nudes
@@ -61,14 +61,14 @@
 
 备注：NSFW；MOSS-Image 仓库内文件已按类型标注，直接对照上表放置即可。
 
-<summary>工作流参考图（2 张）</summary>
+#### 工作流参考图
 
-![MOSS 工作流 1](assets/moss/workflow-01.png)
-![MOSS 工作流 2](assets/moss/workflow-02.png)
+![MOSS 工作流 1](assets/moss/moss_image 1.png)
+![MOSS 工作流 2](assets/moss/moss_image 2.png)
 
 #### 效果图
 
-![MOSS 效果图 1](assets/moss/result-01.png)
+![MOSS 效果图 1](assets/moss/moss_image s.png)
 
 
 ## ComfyUI 路径映射
