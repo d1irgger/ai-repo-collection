@@ -65,26 +65,4 @@
 | Upscale | `ComfyUI/models/upscale_models/` | 放大模型 |
 | 工作流 | `ComfyUI/user/default/workflows/` | 也可直接存 JSON 备注 |
 
-## ComfyUI 目录树
 
-```text
-ComfyUI/
-├── models/
-│   ├── checkpoints/
-│   ├── diffusion_models/
-│   ├── text_encoders/
-│   ├── loras/
-│   ├── vae/
-│   ├── controlnet/
-│   ├── embeddings/
-│   ├── clip/
-│   ├── clip_vision/
-│   ├── unet/
-│   └── upscale_models/
-├── custom_nodes/
-├── user/
-│   └── default/
-│       └── workflows/
-├── input/
-└── output/
-```
