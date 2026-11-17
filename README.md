@@ -1,8 +1,37 @@
 # ai-repo-collection
 个人收集的 AI 仓库，按用途分类，记录亮点与取舍
 # ComfyUI Model Notes
-
 个人模型链接索引与 ComfyUI 放置位置备忘。
+
+## ComfyUI 目录树
+
+```text
+ComfyUI/
+├── models/
+│   ├── checkpoints/
+│   ├── loras/
+│   ├── vae/
+│   ├── controlnet/
+│   ├── embeddings/
+│   ├── clip/
+│   ├── clip_vision/
+│   ├── unet/
+│   └── upscale_models/
+├── custom_nodes/
+├── input/
+└── output/
+## ComfyUI 路径映射
+
+| 模型类型 | 放置路径 |
+|---|---|
+| Checkpoint | `ComfyUI/models/checkpoints/` |
+| LoRA | `ComfyUI/models/loras/` |
+| VAE | `ComfyUI/models/vae/` |
+| ControlNet | `ComfyUI/models/controlnet/` |
+| Embeddings | `ComfyUI/models/embeddings/` |
+| CLIP Vision | `ComfyUI/models/clip_vision/` |
+| Upscale | `ComfyUI/models/upscale_models/` |
+
 
 ## 导航
 - [模型总表](#模型总表)
@@ -46,32 +75,4 @@
 ## 其他模型
 ...
 
-## ComfyUI 路径映射
 
-| 模型类型 | 放置路径 |
-|---|---|
-| Checkpoint | `ComfyUI/models/checkpoints/` |
-| LoRA | `ComfyUI/models/loras/` |
-| VAE | `ComfyUI/models/vae/` |
-| ControlNet | `ComfyUI/models/controlnet/` |
-| Embeddings | `ComfyUI/models/embeddings/` |
-| CLIP Vision | `ComfyUI/models/clip_vision/` |
-| Upscale | `ComfyUI/models/upscale_models/` |
-
-## ComfyUI 目录树
-
-```text
-ComfyUI/
-├── models/
-│   ├── checkpoints/
-│   ├── loras/
-│   ├── vae/
-│   ├── controlnet/
-│   ├── embeddings/
-│   ├── clip/
-│   ├── clip_vision/
-│   ├── unet/
-│   └── upscale_models/
-├── custom_nodes/
-├── input/
-└── output/
