@@ -6,7 +6,6 @@
 - [模型总表](#模型总表)
 - [Checkpoints](#checkpoints)
 - [ComfyUI 路径映射](#comfyui-路径映射)
-- [ComfyUI 目录树](#comfyui-目录树)
 
 ## 模型总表
 
